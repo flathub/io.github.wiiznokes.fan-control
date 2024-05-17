@@ -1,9 +1,9 @@
 # Generate rust sources
 
 ```
-git clone https://github.com/wiiznokes/fan-control.git --branch flatpak
+git clone https://github.com/wiiznokes/fan-control.git
 git clone https://github.com/flatpak/flatpak-builder-tools
-# pip install aiohttp
+# pip install aiohttp toml
 python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py fan-control/Cargo.lock -o cargo-sources.json
 ```
 
@@ -44,4 +44,4 @@ flatpak run io.github.wiiznokes.fan-control
 
 # Udev rules
 
-todo
+https://github.com/wiiznokes/fan-control/blob/master/resource/linux/udev_rules.md
