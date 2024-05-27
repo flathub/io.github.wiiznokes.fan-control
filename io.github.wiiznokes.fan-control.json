@@ -33,17 +33,17 @@
         "make -C ./hardware/libsensors/ install PREFIX=./../../build/libsensors ETCDIR=./../../build/libsensors/etc",
         "FAN_CONTROL_FORMAT=flatpak cargo --offline build --release --verbose",
         "install -Dm755 ./target/release/fan-control -t /app/bin/",
-        "install -Dm644 ./resource/linux/app_icon.svg /app/share/icons/hicolor/scalable/apps/io.github.wiiznokes.fan-control.svg",
-        "install -Dm644 ./resource/linux/metainfo.xml /app/share/metainfo/io.github.wiiznokes.fan-control.metainfo.xml",
-        "install -Dm644 ./resource/linux/desktop_entry.desktop /app/share/applications/io.github.wiiznokes.fan-control.desktop",
-        "mkdir -pm755 /app/share/io.github.wiiznokes.fan-control/resource",
-        "cp -R ./resource/icons /app/share/io.github.wiiznokes.fan-control/resource"
+        "install -Dm644 ./res/linux/app_icon.svg /app/share/icons/hicolor/scalable/apps/io.github.wiiznokes.fan-control.svg",
+        "install -Dm644 ./res/linux/metainfo.xml /app/share/metainfo/io.github.wiiznokes.fan-control.metainfo.xml",
+        "install -Dm644 ./res/linux/desktop_entry.desktop /app/share/applications/io.github.wiiznokes.fan-control.desktop",
+        "mkdir -pm755 /app/share/io.github.wiiznokes.fan-control/res",
+        "cp -R ./res/icons /app/share/io.github.wiiznokes.fan-control/res"
       ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/wiiznokes/fan-control",
-          "commit": "6fe2fab7c2798899b30f2376afbb4797cff46ff7"
+          "commit": "833d7f93275d4d0fa419b9fa40e01772af57a665"
         },
         "./cargo-sources.json"
       ]
