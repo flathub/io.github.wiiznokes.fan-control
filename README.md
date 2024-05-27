@@ -44,4 +44,4 @@ flatpak run io.github.wiiznokes.fan-control
 
 # Udev rules
 
-https://github.com/wiiznokes/fan-control/blob/master/resource/linux/udev_rules.md
+https://github.com/wiiznokes/fan-control/blob/master/res/linux/udev_rules.md
