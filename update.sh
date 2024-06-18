@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+set -x
 
 rm -rf fan-control
 rm -rf flatpak-builder-tools
