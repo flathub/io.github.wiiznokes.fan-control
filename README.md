@@ -1,6 +1,12 @@
+# How to make a new release
+
+```sh
+just
+```
+
 # Generate rust sources
 
-```
+```sh
 git clone https://github.com/wiiznokes/fan-control.git
 git clone https://github.com/flatpak/flatpak-builder-tools
 # pip install aiohttp toml
@@ -9,7 +15,7 @@ python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py fan-control/Cargo
 
 # Install flatpak SDKs
 
-```
+```sh
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install --noninteractive --user flathub \
     org.freedesktop.Platform//23.08 \
@@ -20,7 +26,7 @@ flatpak install --noninteractive --user flathub \
 
 # Build and install app
 
-```
+```sh
 # sudo apt install flatpak-builder git-lfs
 # or flatpak install -y flathub org.flatpak.Builder
 flatpak uninstall io.github.wiiznokes.fan-control -y || true
@@ -38,7 +44,7 @@ flatpak-builder \
 
 # Run app
 
-```
+```sh
 flatpak run io.github.wiiznokes.fan-control
 ```
 
