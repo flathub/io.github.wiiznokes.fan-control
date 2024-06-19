@@ -3,3 +3,4 @@
 /.flatpak-builder
 /flatpak-out
 /repo
+/tests
