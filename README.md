@@ -1,3 +1,7 @@
+# Upstream repo
+
+https://github.com/wiiznokes/fan-control
+
 # How to make a new release
 
 ```sh
