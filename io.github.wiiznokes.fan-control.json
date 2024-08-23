@@ -43,7 +43,7 @@
         {
           "type": "git",
           "url": "https://github.com/wiiznokes/fan-control",
-          "commit": "58a35f8bd6b1f5ae54195c8bc602b2fba112ad7d"
+          "commit": "d59800abb86cd409d6685112ebcebf8f67b5e6c7"
         },
         "./cargo-sources.json"
       ]
