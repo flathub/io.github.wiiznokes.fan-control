@@ -1,4 +1,5 @@
 branch := "master"
+sdk-version := "24.08"
 
 
 default: setup sources-gen manifest-gen
@@ -19,10 +20,10 @@ manifest-gen:
 install-sdk:
     flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
     flatpak install --noninteractive --user flathub \
-        org.freedesktop.Platform//23.08 \
-        org.freedesktop.Sdk//23.08 \
-        org.freedesktop.Sdk.Extension.rust-stable//23.08 \
-        org.freedesktop.Sdk.Extension.llvm17//23.08
+        org.freedesktop.Platform//{{sdk-version}} \
+        org.freedesktop.Sdk//{{sdk-version}} \
+        org.freedesktop.Sdk.Extension.rust-stable//{{sdk-version}} \
+        org.freedesktop.Sdk.Extension.llvm18//{{sdk-version}}
 
 uninstall:
     flatpak uninstall io.github.wiiznokes.fan-control -y || true

@@ -1,11 +1,11 @@
 {
   "app-id": "io.github.wiiznokes.fan-control",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "23.08",
+  "runtime-version": "24.08",
   "sdk": "org.freedesktop.Sdk",
   "sdk-extensions": [
     "org.freedesktop.Sdk.Extension.rust-stable",
-    "org.freedesktop.Sdk.Extension.llvm17"
+    "org.freedesktop.Sdk.Extension.llvm18"
   ],
   "command": "fan-control",
   "finish-args": [
@@ -26,8 +26,8 @@
         "env": {
           "CARGO_HOME": "/run/build/fan-control/cargo"
         },
-        "append-path": "/usr/lib/sdk/llvm17/bin",
-        "prepend-ld-library-path": "/usr/lib/sdk/llvm17/lib"
+        "append-path": "/usr/lib/sdk/llvm18/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/llvm18/lib"
       },
       "build-commands": [
         "make -C ./hardware/libsensors/ install PREFIX=./../../build/libsensors ETCDIR=./../../build/libsensors/etc",
@@ -35,9 +35,7 @@
         "install -Dm755 ./target/release/fan-control -t /app/bin/",
         "install -Dm644 ./res/linux/app_icon.svg /app/share/icons/hicolor/scalable/apps/io.github.wiiznokes.fan-control.svg",
         "install -Dm644 ./res/linux/metainfo.xml /app/share/metainfo/io.github.wiiznokes.fan-control.metainfo.xml",
-        "install -Dm644 ./res/linux/desktop_entry.desktop /app/share/applications/io.github.wiiznokes.fan-control.desktop",
-        "mkdir -pm755 /app/share/io.github.wiiznokes.fan-control/res",
-        "cp -R ./res/icons /app/share/io.github.wiiznokes.fan-control/res"
+        "install -Dm644 ./res/linux/desktop_entry.desktop /app/share/applications/io.github.wiiznokes.fan-control.desktop"
       ],
       "sources": [
         {
