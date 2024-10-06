@@ -15,7 +15,7 @@ sources-gen:
     python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py fan-control/Cargo.lock -o cargo-sources.json
 
 manifest-gen:
-    ./gen_manifest.sh
+    ./gen_manifest.nu
 
 install-sdk:
     flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo

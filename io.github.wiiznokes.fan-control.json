@@ -13,12 +13,60 @@
     "--socket=fallback-x11",
     "--socket=wayland",
     "--device=all",
-    "--filesystem=/sys"
+    "--filesystem=/sys",
+    "--talk-name=com.system76.CosmicSettingsDaemon"
   ],
   "build-options": {
     "append-path": "/usr/lib/sdk/rust-stable/bin"
   },
   "modules": [
+    {
+      "name": "just",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -Dm0755 just /app/bin/just"
+      ],
+      "cleanup": [
+        "*"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "strip-components": 0,
+          "dest-filename": "just.tar.gz",
+          "url": "https://github.com/casey/just/releases/download/1.35.0/just-1.35.0-x86_64-unknown-linux-musl.tar.gz",
+          "sha256": "c4172306e241bd175c07316156a610593fa2b687ac49418520a375605d7cead4",
+          "only_arches": [
+            "x86_64"
+          ]
+        },
+        {
+          "type": "archive",
+          "strip-components": 0,
+          "dest-filename": "just.tar.gz",
+          "url": "https://github.com/casey/just/releases/download/1.35.0/just-1.35.0-aarch64-unknown-linux-musl.tar.gz",
+          "sha256": "a94c75426239fce8c1e7fdfccd20d60d987924f91ac45c843a14cd72d4d71e73",
+          "only_arches": [
+            "aarch64"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cosmic-icons",
+      "buildsystem": "simple",
+      "build-commands": [
+        "just prefix=\"/app\" install"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "dest-filename": "cosmic-icons-epoch-1.0.0-alpha.1.tar.gz",
+          "url": "https://github.com/pop-os/cosmic-icons/archive/refs/tags/epoch-1.0.0-alpha.1.tar.gz",
+          "sha256": "20d1a184c0421501e7ed8761f6e6178c3e16c787373357dae1d4dc22b9109428"
+        }
+      ]
+    },
     {
       "name": "fan-control",
       "buildsystem": "simple",
@@ -30,6 +78,7 @@
         "prepend-ld-library-path": "/usr/lib/sdk/llvm18/lib"
       },
       "build-commands": [
+        "rm /app/bin/just",
         "make -C ./hardware/libsensors/ install PREFIX=./../../build/libsensors ETCDIR=./../../build/libsensors/etc",
         "FAN_CONTROL_FORMAT=flatpak cargo --offline build --release --verbose",
         "install -Dm755 ./target/release/fan-control -t /app/bin/",
@@ -41,7 +90,7 @@
         {
           "type": "git",
           "url": "https://github.com/wiiznokes/fan-control",
-          "commit": "1235bee27ff39df0b8d81a995029ac7a14de99c7"
+          "commit": "15d88573fbb18effc516fe6cc17cd67eeda2204d"
         },
         "./cargo-sources.json"
       ]
