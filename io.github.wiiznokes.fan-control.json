@@ -1,13 +1,13 @@
 {
   "app-id": "io.github.wiiznokes.fan-control",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "24.08",
+  "runtime-version": "25.08",
   "base": "com.system76.Cosmic.BaseApp",
   "base-version": "stable",
   "sdk": "org.freedesktop.Sdk",
   "sdk-extensions": [
     "org.freedesktop.Sdk.Extension.rust-stable",
-    "org.freedesktop.Sdk.Extension.llvm18"
+    "org.freedesktop.Sdk.Extension.llvm22"
   ],
   "command": "fan-control",
   "finish-args": [
@@ -29,8 +29,8 @@
       "name": "fan-control",
       "buildsystem": "simple",
       "build-options": {
-        "append-path": "/usr/lib/sdk/llvm18/bin",
-        "prepend-ld-library-path": "/usr/lib/sdk/llvm18/lib"
+        "append-path": "/usr/lib/sdk/llvm22/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/llvm22/lib"
       },
       "build-commands": [
         "just build-libsensors",
@@ -41,7 +41,7 @@
         {
           "type": "git",
           "url": "https://github.com/wiiznokes/fan-control",
-          "commit": "dbefdc98a847a68c16011e5b227cbd19741aeedc"
+          "commit": "5647e9396b1a1280d3d3c38843e5d2f59a5bb125"
         },
         "./cargo-sources.json"
       ]
