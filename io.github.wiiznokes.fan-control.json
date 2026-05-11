@@ -34,8 +34,9 @@
       },
       "build-commands": [
         "just build-libsensors",
-        "cat build/libsensors/include/sensors/sensors.h",
-        "FAN_CONTROL_FORMAT=flatpak just build-release --verbose --offline",
+        "cat build/libsensors/include/sensors/sensors.h || true",
+        "FAN_CONTROL_FORMAT=flatpak just build-release --verbose --offline || true",
+        "cat target/release/build/sensors-sys-0458c1877727db6b/out/sensors-sys.rs",
         "just prefix=/app install"
       ],
       "sources": [
