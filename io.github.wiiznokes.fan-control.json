@@ -34,16 +34,14 @@
       },
       "build-commands": [
         "just build-libsensors",
-        "cat build/libsensors/include/sensors/sensors.h || true",
-        "FAN_CONTROL_FORMAT=flatpak just build-release --verbose --offline || true",
-        "cat target/release/build/sensors-sys-0458c1877727db6b/out/sensors-sys.rs",
+        "FAN_CONTROL_FORMAT=flatpak just build-release --verbose --offline",
         "just prefix=/app install"
       ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/wiiznokes/fan-control",
-          "commit": "5647e9396b1a1280d3d3c38843e5d2f59a5bb125"
+          "commit": "c99be62e5f33ba5189595f1393062cd8c3dff5a7"
         },
         "./cargo-sources.json"
       ]
