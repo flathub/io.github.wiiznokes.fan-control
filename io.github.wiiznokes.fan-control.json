@@ -1,7 +1,7 @@
 {
   "app-id": "io.github.wiiznokes.fan-control",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "24.08",
+  "runtime-version": "25.08",
   "base": "com.system76.Cosmic.BaseApp",
   "base-version": "stable",
   "sdk": "org.freedesktop.Sdk",
@@ -41,7 +41,7 @@
         {
           "type": "git",
           "url": "https://github.com/wiiznokes/fan-control",
-          "commit": "dbefdc98a847a68c16011e5b227cbd19741aeedc"
+          "commit": "2db64c2d580f90bbdc1662aac704c9eb0b0a80fc"
         },
         "./cargo-sources.json"
       ]
